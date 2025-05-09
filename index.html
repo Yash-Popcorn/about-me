@@ -12,6 +12,7 @@
       color: #000;
       line-height: 1.5;
     }
+
     .top-nav {
       display: flex;
       justify-content: space-between;
@@ -23,6 +24,7 @@
       text-decoration: none;
       color: #000;
     }
+
     h1 {
       text-align: center;
       margin: 0 0 1rem 0;
@@ -36,6 +38,7 @@
       color: #666;
       margin-bottom: 2rem;
     }
+
     .content {
       margin-bottom: 2rem;
       text-align: center;
@@ -45,19 +48,8 @@
       max-width: 700px;
       margin: 0 auto 1rem auto;
     }
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .links {
-      margin: 1.5rem 0;
-    }
-    .links a {
-      margin-right: 1rem;
-    }
+
+    /* Updated list styles */
     .recent {
       text-align: left;
       max-width: 700px;
@@ -66,17 +58,52 @@
     .recent h3 {
       margin-bottom: 0.5rem;
     }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
+    .recent ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-    li {
-      margin-bottom: 0.5rem;
+    .recent li {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
     }
+    .recent li h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .recent li p {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .recent li a {
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+    }
+    .recent li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Nested hackathon list */
+    .recent li ul.sublist {
+      list-style: disc;
+      margin: 0.5rem 0 0.75rem 1.5rem;
+      padding: 0;
+    }
+    .recent li ul.sublist li {
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
     .divider {
       border-top: 1px solid #ddd;
       margin: 3rem 0 1rem 0;
     }
+
     .social-links {
       text-align: center;
       margin-top: 1rem;
@@ -84,6 +111,7 @@
     .social-links a {
       margin: 0 0.5rem;
     }
+
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -93,6 +121,7 @@
   </style>
 </head>
 <body>
+
   <div class="top-nav">
     <h2>yash seth</h2>
     <div>
@@ -105,29 +134,58 @@
 
   <div class="content">
     <p>
-        ⠏ ⠗ ⠕ ⠛ ⠗ ⠁ ⠍ ⠍ ⠑ ⠗   ⠃ ⠥ ⠊ ⠇ ⠙ ⠊ ⠝ ⠛   ⠞ ⠓ ⠑   ⠋ ⠥ ⠞ ⠥ ⠗ ⠑    ⠎ ⠕ ⠇ ⠧ ⠊ ⠝ ⠛   ⠏ ⠗ ⠕ ⠃ ⠇ ⠑ ⠍ ⠎  ⠍ ⠎ 
+      ⠏ ⠗ ⠕ ⠛ ⠗ ⠁ ⠍ ⠍ ⠑ ⠗   ⠃ ⠥ ⠊ ⠇ ⠙ ⠊ ⠝ ⠛   ⠞ ⠓ ⠑   ⠋ ⠥ ⠞ ⠥ ⠗ ⠑    ⠎ ⠕ ⠇ ⠧ ⠊ ⠝ ⠛   ⠏ ⠗ ⠕ ⠃ ⠇ ⠑ ⠍ ⠎  ⠍ ⠎ 
     </p>
-    
     <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 85%; margin: 0 auto 2rem auto;">
-      <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Li4j82QbBvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+              src="https://www.youtube.com/embed/Li4j82QbBvk" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
     </div>
-
     <p>
-        ⠏ ⠗ ⠕ ⠛ ⠗ ⠁ ⠍ ⠍ ⠑ ⠗   ⠃ ⠥ ⠊ ⠇ ⠙ ⠊ ⠝ ⠛   ⠞ ⠓ ⠑   ⠋ ⠥ ⠞ ⠥ ⠗ ⠑    ⠎ ⠕ ⠇ ⠧ ⠊ ⠝ ⠛   ⠏ ⠗ ⠕ ⠃ ⠇ ⠑ ⠍ ⠎  ⠍ ⠎ 
+      ⠏ ⠗ ⠕ ⠛ ⠗ ⠁ ⠍ ⠍ ⠑ ⠗   ⠃ ⠥ ⠊ ⠇ ⠙ ⠊ ⠝ ⠛   ⠞ ⠓ ⠑   ⠋ ⠥ ⠞ ⠥ ⠗ ⠑    ⠎ ⠕ ⠇ ⠧ ⠊ ⠝ ⠛   ⠏ ⠗ ⠕ ⠃ ⠇ ⠑ ⠍ ⠎  ⠍ ⠎ 
     </p>
-    
+
     <div class="recent">
-      <h3>stuff i did:</h3>
+      <h3>during highschool:</h3>
       <ul>
         <li>
-          <a href="https://collegefixed.com" target="_blank">collegefixed.com</a>
+          <h4>Hackathons</h4>
+          <ul class="sublist">
+            <li>1st Place – Tri‑Valley Hacks</li>
+            <li>Top 7 – Los Altos Hacks</li>
+            <li>Top 20 – UPenn Hackathon</li>
+            <li>Top 2 – Corpus Hacks</li>
+            <li>Top 2 – Branham Hacks</li>
+          </ul>
+          <a href="https://devpost.com/Yash-Popcorn?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank">
+            Visit DEVPOST
+          </a>
         </li>
         <li>
-          <a href="https://simr.stanford.edu/" target="_blank">stanford research</a>
+          <h4>College Fixed</h4>
+          <p>A college research tool for high schoolers to learn about college, internships, essay examples, and competitions. Helped 850+ users in 20+ countries.</p>
+          <a href="https://collegefixed.com" target="_blank">Visit collegefixed.com</a>
+        </li>
+        <li>
+          <h4>Stanford Research (SIMR)</h4>
+          <p>Accepted to a summer program with &lt;3% acceptance rate. One of 50 selected from 1,500+ applicants. Conducted Bioinformatics research.</p>
+          <a href="https://simr.stanford.edu/" target="_blank">Visit simr.stanford.edu</a>
+        </li>
+        <li>
+          <h4>SJSU Research</h4>
+          <p>Conducted cybersecurity + AI research under Prof. Mark Stamp. Published a paper in a Springer journal.</p>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-83157-7_16" target="_blank">Visit Springer Journal</a>
+        </li>
+        <li>
+          <h4>Game Development</h4>
+          <p>Founded a game studio with friends. Achieved 800k+ visits and 40k+ members.</p>
         </li>
       </ul>
     </div>
-    
+
     <p>I'm currently building new things and would love to connect and chat with people. I REALLY REALLY like to create solutions to help others.</p>
   </div>
 
@@ -141,5 +199,6 @@
   <footer>
     &copy; 2025 Yash Seth
   </footer>
+
 </body>
 </html>
