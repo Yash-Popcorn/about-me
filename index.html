@@ -19,7 +19,7 @@
       text-align: center;
     }
     .content {
-      max-width: 400px;
+      max-width: 600px;
       padding: 24px;
       text-align: left;
     }
@@ -68,6 +68,89 @@
       height: auto;
       margin: 0 0 12px 0;
     }
+    .media-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .media-item {
+      cursor: pointer;
+      color: #0a66c2;
+      text-decoration: none;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.03);
+      transition: background-color 0.2s;
+    }
+    .media-item:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+    .media-item.video::before {
+      content: "▶ ";
+      margin-right: 4px;
+    }
+    .media-item.essay::before {
+      content: " ";
+      margin-right: 4px;
+    }
+    .essay-content {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #FFFBEB;
+      overflow-y: auto;
+      z-index: 1000;
+      padding: 40px 20px;
+    }
+    .essay-content.active {
+      display: block;
+    }
+    .essay-inner {
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .essay-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .essay-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    .essay-close {
+      cursor: pointer;
+      padding: 8px 16px;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      font-size: 1rem;
+    }
+    .essay-close:hover {
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .essay-body {
+      font-size: 1rem;
+    }
+    .essay-body p {
+      margin: 16px 0;
+    }
+    .essay-date {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+    .essay-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto 24px auto;
+      display: block;
+    }
   </style>
   
 </head>
@@ -78,16 +161,18 @@
     </video>
     <p class="title">yash seth</p>
     <ul>
-      <li>building arome to help retail businesses grow</li>
+      <li>trying to make videos & write essays</li>
       <li>intern @ context.ai</li>
       <li>research intern @ stanford university</li>
       <li>research intern @ san jose state university</li>
     </ul>
     <hr class="divider">
-    <p class="section-title">Lore</p>
-    <ul>
-      In middle school, I used to make video games and youtube videos. In high school I participated in a lot of high school hackathons with my high school friends.
-    </ul>
+    <p class="section-title">Videos & Essays</p>
+    <div class="media-grid">
+      <a href="https://youtube.com/watch?v=example1" target="_blank" class="media-item video">coming soon!</a>
+      <a href="https://youtube.com/watch?v=example2" target="_blank" class="media-item video">coming soon!</a>
+      <span class="media-item essay" onclick="openEssay('current-state')">current state of life</span>
+    </div>
     <hr class="divider">
     <div class="links">
       <a href="https://www.linkedin.com/in/yash-seth-107233352/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -95,5 +180,51 @@
       <a href="mailto:yashseth@bu.edu">Email</a>
     </div>
   </div>
+
+  <!-- Essay Contents -->
+  <div id="current-state" class="essay-content">
+    <div class="essay-inner">
+      <div class="essay-header">
+        <h1 class="essay-title">current state of life</h1>
+        <button class="essay-close" onclick="closeEssay('current-state')">Close</button>
+      </div>
+      <p class="essay-date">Oct 23, 2025 Fall</p>
+      <img src="https://cdn.cosmos.so/0f224079-146a-4114-a8ea-3047690ff1fd?format=jpeg" alt="Current State of Life" class="essay-image">
+      <div class="essay-body">
+        <p>
+          In a few years, I got to try out hackathon, research, and internship. I am incredibly grateful for the opportunities I've had. My intention of experimenting with new things at a young age was to have more clarity about what I want to spend my time on. However, I am actually not sure what I want to exactly do. It actually led to become more confused about the future. In a world where events always happen, adaptability is crucial and predicting the future becomes a bit more difficult. So, it feels like I am betting what will happen (my intuition I guess).
+        </p>
+        <p>
+          I guess you can only connect the dots backwards, and I wish I connect them forward (would be super cool lol).
+        </p>
+        <p>
+          I currently have this one idea related to an old hobby of mine. I recently talked with my Mom about maybe not doing an internship, but she desperately wants me to do one. She doesn't believe in my working solo on a project, but it makes sense because my mom is just narrating what her friend's kids usually do. I am not sure about an internship exactly yet because I am really passionate about this idea, so I am going to start working really hard on this idea.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openEssay(essayId) {
+      document.getElementById(essayId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeEssay(essayId) {
+      document.getElementById(essayId).classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close essay on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const activeEssay = document.querySelector('.essay-content.active');
+        if (activeEssay) {
+          activeEssay.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
+  </script>
 </body>
 </html>
