@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root { color-scheme: light; --flower-size: 120px; }
     html, body {
@@ -11,12 +14,13 @@
       margin: 0;
     }
     body {
-      background-color: #FFFBEB;
-      color: #222222;
+      background-color: #1D1D1B;
+      color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      font-family: 'EB Garamond', serif;
     }
     .content {
       max-width: 600px;
@@ -26,17 +30,18 @@
     .content p.title {
       font-size: 2rem;
       margin: 0 0 12px 0;
-      font-weight: 600;
+      font-weight: normal;
     }
     .content ul {
-      list-style: disc outside;
-      padding-left: 1.25rem;
+      list-style: none;
+      padding-left: 0;
       margin: 0;
+      max-width: 400px;
     }
     .divider {
       border: 0;
       height: 1px;
-      background: rgba(0, 0, 0, 0.2);
+      background: #2B2B2B;
       margin: 16px 0;
     }
     .links {
@@ -46,20 +51,20 @@
       flex-wrap: wrap;
     }
     .links a {
-      color: #0a66c2;
+      color: #646464;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: normal;
     }
     .links a:hover {
       text-decoration: underline;
     }
     .links .sep {
-      color: #888888;
+      color: #646464;
     }
     .section-title {
       font-size: 1.125rem;
       margin: 8px 0 8px 0;
-      font-weight: 600;
+      font-weight: normal;
     }
     .flower {
       display: block;
@@ -75,14 +80,14 @@
     }
     .media-item {
       cursor: pointer;
-      color: #0a66c2;
+      color: #FFFFFF;
       text-decoration: none;
       padding: 8px;
-      background: rgba(0, 0, 0, 0.03);
-      transition: background-color 0.2s;
+      background: #1D1D1B;
+      transition: color 0.2s;
     }
     .media-item:hover {
-      background: rgba(0, 0, 0, 0.06);
+      color: #A0A0A0;
     }
     .media-item.video::before {
       content: "▶ ";
@@ -99,7 +104,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: #FFFBEB;
+      background: #1D1D1B;
       overflow-y: auto;
       z-index: 1000;
       padding: 40px 20px;
@@ -120,7 +125,7 @@
     }
     .essay-title {
       font-size: 1.75rem;
-      font-weight: 600;
+      font-weight: normal;
       margin: 0;
     }
     .essay-close {
@@ -129,6 +134,7 @@
       background: rgba(0, 0, 0, 0.1);
       border: none;
       font-size: 1rem;
+      color: #FFFFFF;
     }
     .essay-close:hover {
       background: rgba(0, 0, 0, 0.15);
@@ -140,7 +146,7 @@
       margin: 16px 0;
     }
     .essay-date {
-      color: #666;
+      color: #FFFFFF;
       font-size: 0.9rem;
       margin-top: 8px;
     }
@@ -156,22 +162,14 @@
 </head>
 <body>
   <div class="content">
-    <video class="flower" autoplay muted loop playsinline>
-      <source src="https://cdn.cosmos.so/093d20e4-01fc-4f91-a233-b7006bd8af85.mp4" type="video/mp4">
-    </video>
     <p class="title">yash seth</p>
     <ul>
-      <li>trying to make videos & write essays</li>
-      <li>intern @ context.ai</li>
-      <li>research intern @ stanford university</li>
-      <li>research intern @ san jose state university</li>
+      <li>with new advancements in webgpu, video/audio compression algorithms, and ai, there is a huge opportunity to bring the full capabilities of video editing to the web.<br><br>stella will be the worldwide video editing platform that makes it possible for anyone to become a video editor.</li>
     </ul>
     <hr class="divider">
-    <p class="section-title">Videos & Essays</p>
+    <p class="section-title">writing</p>
     <div class="media-grid">
-      <a href="https://youtube.com/watch?v=example1" target="_blank" class="media-item video">coming soon!</a>
-      <a href="https://youtube.com/watch?v=example2" target="_blank" class="media-item video">coming soon!</a>
-      <span class="media-item essay" onclick="openEssay('no-more-overthinking')">no more overthinking</span>
+      <span class="media-item essay" onclick="openEssay('no-more-overthinking')">audio</span>
     </div>
     <hr class="divider">
     <div class="links">
@@ -185,20 +183,23 @@
   <div id="no-more-overthinking" class="essay-content">
     <div class="essay-inner">
       <div class="essay-header">
-        <h1 class="essay-title">no more overthinking</h1>
+        <h1 class="essay-title">audio</h1>
         <button class="essay-close" onclick="closeEssay('no-more-overthinking')">Close</button>
       </div>
-      <p class="essay-date">Oct 28, 2025</p>
+      <p class="essay-date">nov 26, 2025</p>
       <div class="essay-body">
-        <p>
-          Overthinking is probably the worst thing I ever indulged in.
-        </p>
-        <p>
-          Sometimes, being a overthinker prevents you from making foolish decisions, but I think I could benefit from acting more stupid.
-        </p>
-        <p>
-          Dropping my IQ points on purpose.
-        </p>
+        <audio controls style="width: 100%; margin: 16px 0;">
+          <source src="run-that-back-turbo.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <audio controls style="width: 100%; margin: 16px 0;">
+          <source src="bizet.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <audio controls style="width: 100%; margin: 16px 0;">
+          <source src="genesis.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </div>
   </div>
