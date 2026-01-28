@@ -10,14 +10,14 @@
   <style>
     :root { color-scheme: light; --flower-size: 120px; }
     html, body {
-      height: 100%;
+      min-height: 100%;
       margin: 0;
     }
     body {
       background-color: #1D1D1B;
       color: #FFFFFF;
       display: flex;
-      align-items: center;
+      align-items: safe center;
       justify-content: center;
       text-align: center;
       font-family: 'EB Garamond', serif;
@@ -99,7 +99,7 @@
     }
     .media-item.movie {
       cursor: default;
-      padding: 4px 0;
+      padding: 4px 0 4px 8px;
       background: transparent;
     }
     .media-item.movie:hover {
