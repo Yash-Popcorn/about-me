@@ -77,7 +77,6 @@
       display: grid;
       gap: 12px;
       margin-top: 12px;
-      overflow: visible;
     }
     .media-item {
       cursor: pointer;
@@ -102,40 +101,9 @@
       cursor: default;
       padding: 4px 0 4px 8px;
       background: transparent;
-      position: relative;
     }
     .media-item.movie:hover {
       color: #FFFFFF;
-    }
-    .media-item.movie:hover .poster-card {
-      display: block;
-    }
-    .poster-card {
-      display: none;
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      margin-left: 12px;
-      z-index: 100;
-      pointer-events: none;
-    }
-    .poster-card img {
-      width: 120px;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
-    @media (max-width: 600px) {
-      .poster-card {
-        left: auto;
-        right: 0;
-        top: auto;
-        bottom: 100%;
-        transform: none;
-        margin-left: 0;
-        margin-bottom: 8px;
-      }
     }
     .essay-content {
       display: none;
@@ -214,16 +182,16 @@
     <hr class="divider">
     <p class="section-title">recent watches</p>
     <div class="media-grid">
-      <span class="media-item movie">limitless<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/dLxNTX9XHZP12qxB2rYRNbBQEhT.jpg" alt="Limitless poster"></span></span>
-      <span class="media-item movie">black swan<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/rH19vkjAaGm2RwfVOB8Hw3pMefP.jpg" alt="Black Swan poster"></span></span>
-      <span class="media-item movie">garden state<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/cXZVsDy6NpPPhCgcBY3p8EfQsGZ.jpg" alt="Garden State poster"></span></span>
-      <span class="media-item movie">superbad<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg" alt="Superbad poster"></span></span>
-      <span class="media-item movie">21 jump street<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/8v3Sqv9UcIUC4ebmpKWROqPBINZ.jpg" alt="21 Jump Street poster"></span></span>
-      <span class="media-item movie">dodgeball<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/4v5hKiIzCApfYeYf2gCGy6qADpx.jpg" alt="Dodgeball poster"></span></span>
-      <span class="media-item movie">a complete unknown<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg" alt="A Complete Unknown poster"></span></span>
-      <span class="media-item movie">the hangover<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/uluhlXubGu1VxU63X9VHCLWDAYP.jpg" alt="The Hangover poster"></span></span>
-      <span class="media-item movie">mid90s<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/dBxxtfNq7ByPMfi7J0s2l5rqJR4.jpg" alt="Mid90s poster"></span></span>
-      <span class="media-item movie">lady bird<span class="poster-card"><img src="https://image.tmdb.org/t/p/w500/iySFtKLrWvVWYkUxP9w1IjpK9w6.jpg" alt="Lady Bird poster"></span></span>
+      <span class="media-item movie">limitless</span>
+      <span class="media-item movie">black swan</span>
+      <span class="media-item movie">garden state</span>
+      <span class="media-item movie">superbad</span>
+      <span class="media-item movie">21 jump street</span>
+      <span class="media-item movie">dodgeball</span>
+      <span class="media-item movie">a complete unknown</span>
+      <span class="media-item movie">the hangover</span>
+      <span class="media-item movie">mid90s</span>
+      <span class="media-item movie">lady bird</span>
     </div>
     <hr class="divider">
     <div class="links">
@@ -278,13 +246,6 @@
           document.body.style.overflow = 'auto';
         }
       }
-    });
-
-    // Handle poster image load errors
-    document.querySelectorAll('.poster-card img').forEach(function(img) {
-      img.onerror = function() {
-        this.parentElement.style.display = 'none';
-      };
     });
   </script>
 </body>
