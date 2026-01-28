@@ -98,12 +98,8 @@
       margin-right: 4px;
     }
     .media-item.movie {
-      cursor: default;
       padding: 4px 0 4px 8px;
       background: transparent;
-    }
-    .media-item.movie:hover {
-      color: #FFFFFF;
     }
     .essay-content {
       display: none;
@@ -165,6 +161,51 @@
       margin: 0 auto 24px auto;
       display: block;
     }
+    /* Movie hover card styles */
+    .media-item.movie {
+      cursor: pointer;
+      position: relative;
+    }
+    .movie-hover-card {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      background: #2B2B2B;
+      border-radius: 8px;
+      padding: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+      z-index: 100;
+      pointer-events: none;
+      margin-bottom: 8px;
+    }
+    .media-item.movie:hover .movie-hover-card {
+      opacity: 1;
+      visibility: visible;
+    }
+    .movie-hover-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
+    .movie-hover-card .movie-title {
+      font-size: 0.85rem;
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+    .movie-hover-card .movie-year {
+      font-size: 0.75rem;
+      color: #A0A0A0;
+      text-align: center;
+      margin-top: 2px;
+    }
   </style>
   
 </head>
@@ -182,16 +223,86 @@
     <hr class="divider">
     <p class="section-title">recent watches</p>
     <div class="media-grid">
-      <span class="media-item movie">limitless</span>
-      <span class="media-item movie">black swan</span>
-      <span class="media-item movie">garden state</span>
-      <span class="media-item movie">superbad</span>
-      <span class="media-item movie">21 jump street</span>
-      <span class="media-item movie">dodgeball</span>
-      <span class="media-item movie">a complete unknown</span>
-      <span class="media-item movie">the hangover</span>
-      <span class="media-item movie">mid90s</span>
-      <span class="media-item movie">lady bird</span>
+      <span class="media-item movie">
+        limitless
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/xUfRZu2CvixkqFqP9edQMlNIHR5.jpg" alt="Limitless poster">
+          <div class="movie-title">Limitless</div>
+          <div class="movie-year">2011</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        black swan
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/rH19qovnpXHckU07wMBkY9dMJ6B.jpg" alt="Black Swan poster">
+          <div class="movie-title">Black Swan</div>
+          <div class="movie-year">2010</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        garden state
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/uKaAJA8nkSXgHO7kAZcfbAvPQgU.jpg" alt="Garden State poster">
+          <div class="movie-title">Garden State</div>
+          <div class="movie-year">2004</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        superbad
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/ek8e8txUyUwd2BNqj6lFEerJfbs.jpg" alt="Superbad poster">
+          <div class="movie-title">Superbad</div>
+          <div class="movie-year">2007</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        21 jump street
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/8vAmFakwpZITjBdhPKUb7zkuysJ.jpg" alt="21 Jump Street poster">
+          <div class="movie-title">21 Jump Street</div>
+          <div class="movie-year">2012</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        dodgeball
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/kh9FKJ0Cxb1r7LVDhZYmHC2ogWI.jpg" alt="Dodgeball poster">
+          <div class="movie-title">Dodgeball: A True Underdog Story</div>
+          <div class="movie-year">2004</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        a complete unknown
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/qzMYKnT4MG1d0FwI7yfpmy8ONaD.jpg" alt="A Complete Unknown poster">
+          <div class="movie-title">A Complete Unknown</div>
+          <div class="movie-year">2024</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        the hangover
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/uluhlXubGu1VxU63X9VHCLWDAYP.jpg" alt="The Hangover poster">
+          <div class="movie-title">The Hangover</div>
+          <div class="movie-year">2009</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        mid90s
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/6jeqH0PCSJ0uu8Kzg7jCjnVhakR.jpg" alt="Mid90s poster">
+          <div class="movie-title">Mid90s</div>
+          <div class="movie-year">2018</div>
+        </div>
+      </span>
+      <span class="media-item movie">
+        lady bird
+        <div class="movie-hover-card">
+          <img src="https://image.tmdb.org/t/p/w342/iySFtKLrWvVzXzlFj7x1zalxi72.jpg" alt="Lady Bird poster">
+          <div class="movie-title">Lady Bird</div>
+          <div class="movie-year">2017</div>
+        </div>
+      </span>
     </div>
     <hr class="divider">
     <div class="links">
